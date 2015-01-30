@@ -63,7 +63,7 @@ JadeTask.prototype.enqueue = function(gulp, params) {
         cb(null, data);
       }
     }))
-    .pipe(jade[compiler](opts))
+    .pipe(jade(opts))
     .pipe(gulp.dest(params.dist));
 };
 
