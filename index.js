@@ -37,13 +37,12 @@ JadeTask.prototype.enqueue = function(gulp, params) {
         path.basename(file.path).replace(/\.html$/, '')
       );
 
-      if (fs.existsSync(`${dataFile}.js`)) {
-        data = require(`${dataFile}.js`);
+      if (fs.existsSync(dataFile + '.js')) {
+        data = require(dataFile + '.js');
       }
-      else if (fs.existsSync(`${dataFile}.json`)) {
-        data = require(`${dataFile}.json`);
+      else if (fs.existsSync(dataFile + '.json')) {
+        data = require(dataFile + '.json');
       }
-
       if (typeof data === 'function') {
         data(cb);
       }
