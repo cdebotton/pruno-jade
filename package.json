@@ -1,0 +1,29 @@
+{
+  "name": "pruno-jade",
+  "version": "1.0.0",
+  "description": "A Jade mix for pruno that includes gulp-data.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cdebotton/pruno-jade.git"
+  },
+  "keywords": [
+    "pruno",
+    "jade",
+    "gulp-data"
+  ],
+  "author": "Christian de Botton <debotton@brooklynunited.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cdebotton/pruno-jade/issues"
+  },
+  "homepage": "https://github.com/cdebotton/pruno-jade",
+  "dependencies": {
+    "gulp-data": "^1.2.0",
+    "gulp-jade": "^0.11.0",
+    "through2": "^0.6.3"
+  }
+}
