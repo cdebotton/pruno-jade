@@ -34,9 +34,6 @@ JadeTask.prototype.enqueue = function(gulp, params) {
   var IGNORE_SEARCH = new RegExp('^'+ params.ignorePrefix);
 
   gulp.src(params.entry)
-    .on('err', function(err) {
-      pruno.notify('JadeTask', err);
-    })
     .pipe(through.obj(function(file, enc, cb) {
       var fileName = path.basename(file.path);
       var isSys = IGNORE_SEARCH.test(fileName);
@@ -64,7 +61,14 @@ JadeTask.prototype.enqueue = function(gulp, params) {
       }
     }))
     .pipe(jade(opts))
+    .on('error', function(err) {
+      pruno.notify('JadeTask', err);
+    })
     .pipe(gulp.dest(params.dist));
+};
+
+JadeTask.prototype.generateWatcher = function(gulp, params) {
+  return true;
 };
 
 function distillOptions(Task, params) {
