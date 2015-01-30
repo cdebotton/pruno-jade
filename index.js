@@ -13,6 +13,19 @@ function JadeTask(params) {
 
 JadeTask.displayName = 'JadeTask';
 
+JadeTask.getDefaults = function() {
+  return {
+    data: '::src/templates/data',
+    entry: '::src/templates/**/*.jade',
+    dist: '::dist',
+    search: [
+      '::src/templates/**/*.jade',
+      '::src/templates/data/**/*'
+    ],
+    ignorePrefix: '_'
+  };
+};
+
 JadeTask.prototype.enqueue = function(gulp, params) {
   params || (params = {});
   var compiler = 'jade';
