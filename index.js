@@ -69,4 +69,4 @@ function distillOptions(Task, params) {
     }, {});
 }
 
-module.exports = JadeTask;
+module.exports = pruno.extend(JadeTask);
