@@ -18,7 +18,7 @@ JadeTask.prototype.enqueue = function(gulp, params) {
   var compiler = 'jade';
   var opts = distillOptions(JadeTask, params);
   var topLevel = pruno.get('topLevel');
-  var IGNORE_SEARCH = new RegExp(`^${params.ignorePrefix}`);
+  var IGNORE_SEARCH = new RegExp('^'+ params.ignorePrefix);
 
   gulp.src(params.entry)
     .on('err', function(err) {
