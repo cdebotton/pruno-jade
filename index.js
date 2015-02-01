@@ -1,6 +1,6 @@
 "use strict";
 
-var pruno = module.parent.require('pruno');
+var shelljs = require('shelljs');
 var data = require('gulp-data');
 var jade = require('gulp-jade');
 var fs = require('fs');
@@ -30,7 +30,7 @@ JadeTask.prototype.enqueue = function(gulp, params) {
   params || (params = {});
   var compiler = 'jade';
   var opts = distillOptions(JadeTask, params);
-  var topLevel = pruno.get('topLevel');
+  var topLevel = shelljs.pwd();
   var IGNORE_SEARCH = new RegExp('^'+ params.ignorePrefix);
 
   gulp.src(params.entry)
@@ -62,7 +62,7 @@ JadeTask.prototype.enqueue = function(gulp, params) {
     }))
     .pipe(jade(opts))
     .on('error', function(err) {
-      pruno.notify('JadeTask', err);
+      console.error(err);
     })
     .pipe(gulp.dest(params.dist));
 };
@@ -86,4 +86,4 @@ function distillOptions(Task, params) {
     }, {});
 }
 
-module.exports = pruno.extend(JadeTask);
+module.exports = JadeTask;
