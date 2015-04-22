@@ -20,7 +20,8 @@ JadeTask.getDefaults = function() {
     dist: '::dist',
     search: [
       '::src/templates/**/*.jade',
-      '::src/templates/data/**/*'
+      '::src/templates/data/**/*',
+      '::src/**/webpack-stats.json'
     ],
     ignorePrefix: '_'
   };
