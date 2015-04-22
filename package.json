@@ -1,6 +1,6 @@
 {
   "name": "pruno-jade",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A Jade mix for pruno that includes gulp-data.",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,7 @@
   "dependencies": {
     "gulp-data": "^1.2.0",
     "gulp-jade": "^0.11.0",
+    "shelljs": "^0.3.0",
     "through2": "^0.6.3"
   }
 }
