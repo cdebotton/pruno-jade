@@ -45,7 +45,7 @@ JadeTask.prototype.enqueue = function(gulp, params) {
       var dataFile = path.join(
         topLevel,
         params.data,
-        path.basename(file.path).replace(/\.html$/, '')
+        path.basename(file.path).replace(/\.(html|jade|swig)$/, '')
       );
 
       if (fs.existsSync(dataFile + '.js')) {
