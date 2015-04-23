@@ -50,9 +50,11 @@ JadeTask.prototype.enqueue = function(gulp, params) {
 
       if (fs.existsSync(dataFile + '.js')) {
         data = require(dataFile + '.js');
+        delete require.cache(dataFile + '.js');
       }
       else if (fs.existsSync(dataFile + '.json')) {
         data = require(dataFile + '.json');
+        delete require.cache(dataFile + '.json');
       }
       if (typeof data === 'function') {
         data(cb);
